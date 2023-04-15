@@ -1,16 +1,11 @@
 require 'pry-byebug'
 
 def bubble_sort(original_array)
-    ran_once = false
-    loop do
-        working_array = ran_once ? sorted_array : original_array
-        ran_once = true 
-        break if needed_to_sort == false
-    end
+    p sorted_array if sorted_array = original_array.sort
 end
 
 array = [12, 3, 9, 34, 16, 11, 1, 4, 2, 9]
-p bubble_sort(array)
+bubble_sort(array)
 
 # STEPS:
 # Check the shift counter to see if the loop's last iteration executed a shift
