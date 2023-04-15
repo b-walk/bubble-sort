@@ -1,7 +1,30 @@
 require 'pry-byebug'
 
-def bubble_sort(original_array)
-    p sorted_array if sorted_array = original_array.sort
+def bubble_sort(array)
+    original_sort = array.sort
+    sorted_array = array.each_with_index.map do |element, index|
+        next_element = array[index + 1]
+        unless next_element == array.last
+            if element > next_element
+                array[index + 1] = element
+                next_element
+        else
+            element
+        end
+    end
+    
+    loop do
+        sorted_array = sorted_array.each_with_index.map do |element, index|
+            next_element = sorted_array[index + 1]
+            unless element == sorted_array.last
+                # code
+            else
+                # code
+            end
+        end
+        break if sorted_array == array.sort
+    end
+    sorted_array
 end
 
 array = [12, 3, 9, 34, 16, 11, 1, 4, 2, 9]
